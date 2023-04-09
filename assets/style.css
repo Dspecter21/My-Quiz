@@ -1,0 +1,34 @@
+
+
+/* Style the quiz form */
+#quiz-form {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  
+  /* Style the quiz questions */
+  h3 {
+    margin: 20px 0 10px;
+  }
+  
+  /* Style the quiz answer labels */
+  label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  /* Style the quiz submit button */
+  button[type="submit"] {
+    background-color: #0077cc;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005fa3;
+  }
+  
