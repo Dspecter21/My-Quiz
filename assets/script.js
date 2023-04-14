@@ -65,7 +65,7 @@ let score = 0;
 let timerId;
 
 // DOM Elements
-const startButton = document.getElementById("quiz-start");
+const startButton = document.getElementById("start");
 const questionArea = document.getElementById("quiz-box");
 const questionText = document.getElementById("question");
 const optionsArea = document.getElementById("answers");
@@ -75,6 +75,13 @@ const scoreText = document.getElementById("score");
 const saveScoreForm = document.getElementById("save-score");
 const initialsInput = document.getElementById("initials");
 const saveScoreButton = document.getElementById("save");
+
+function startQuiz() {
+	startButton.classList.add("hide");
+	questionArea.classList.remove("hide");
+	startTimer();
+	renderQuestion();
+}
 
 // Helper Functions
 function shuffleArray(array) {
@@ -87,8 +94,11 @@ function shuffleArray(array) {
 function renderQuestion() {
     const question = questions[currentQuestionIndex];
     questionText.textContent = question.question;
+	questionArea.innerHTML = "";
     optionsArea.innerHTML = "";
+
     shuffleArray(question.options);
+	
     for (let i = 0; i < question.options.length; i++) {
         const option = question.options[i];
         const button = document.createElement("button");
@@ -113,6 +123,8 @@ function startTimer() {
 function handleAnswer(event) {
     const selectedOption = event.target.textContent;
     const question = questions[currentQuestionIndex];
+
+	// Guard clause
     if (selectedOption !== question.answer) {
 		timeRemaining -= quizSettings.penalty;
         if (timeRemaining < 0) {
@@ -120,8 +132,22 @@ function handleAnswer(event) {
 			endQuiz();
 		}
 	}
+
 	score++;
 	resultText.textContent = "Correct!";
+	resultText.classList.remove("hide");
+
+	setTimeout(() => {
+		resultText.classList.add("hide");
+	}
+	, 1000);
+
+	currentQuestionIndex++;
+
+	if (currentQuestionIndex === questions.length) {
+		clearInterval(timerId);
+		endQuiz();
+	}
 }
 
 function renderResults() {
@@ -129,3 +155,24 @@ function renderResults() {
 	scoreText.textContent = score;
 	saveScoreForm.classList.remove("hide");
 	initialsInput.focus();
+}
+
+function saveScore(event) {
+	event.preventDefault();
+	const initials = initialsInput.value.trim();
+	if (initials === "") {
+		return;
+	}
+	const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+	const newScore = {
+		initials,
+		score
+	};
+	highScores.push(newScore);
+	localStorage.setItem("highScores", JSON.stringify(highScores));
+	window.location.href = "highscores.html";
+}
+
+function endQuiz() {
+	renderResults();
+}
