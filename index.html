@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -7,78 +11,47 @@
     <title>Coding Quiz Challenge</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href= "assets/style.css"
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
     <nav>
         <ul>
-            <li class="highscores"><a href="/highscores.html">High Scores</a></li>
-            <li class="timer">Time: <span id="time"></span></li>
+            <li class="highscores"><a href="./highscores.html">High Scores</a></li>
+            <li id="timer">Time: <span id="time"></span></li>
         </ul>
     </nav>
-    <div class="quiz-box">
-        <!-- Start screen -->
-        <div class="quiz-start">
-            <h3>Coding Quiz Challenge</h3>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-            <button class="start">Start Quiz</button>
+    <div id="quiz-box" class="content-box">
+        <!-- Quiz start -->
+        <div id="quiz-start" class="center">
+            <h3 class="title">Coding Quiz Challenge</h3>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers will penalize your score/time by ten seconds!</p>
+            <button id="start">Start Quiz</button>
         </div>
 
-        <!-- Quiz screen -->
-        <div class="quiz">
-            <div class="quiz-question">
-                <h3 class="question">Commonly used data types DO NOT include:</p>
-                <ul class="answers">
-                    <li role="button"><button class="answer">1. strings</button></li>
-                    <li role="button"><button class="answer">2. booleans</button></li>
-                    <li role="button"><button class="answer">3. alerts</button></li>
-                    <li role="button"><button class="answer">4. numbers</button></li>
-                </ul>
-            </div>
-            <div class="quiz-question">
-                <h3 class="question">The condition in an if/else statement is enclosed within ____.</p>
-                <ul class="answers">
-                    <li role="button"><button class="answer">1. quotes</button></li>
-                    <li role="button"><button class="answer">2. curly brackets</button></li>
-                    <li role="button"><button class="answer">3. parentheses</button></li>
-                    <li role="button"><button class="answer">4. square brackets</button></li>
-                </ul>
-            </div>
-            <div class="quiz-question">
-                <h3 class="question">Arrays in JavaScript can be used to store ____.</p>
-                <ul class="answers">
-                    <li role="button"><button class="answer">1. numbers and strings</button></li>
-                    <li role="button"><button class="answer">2. other arrays</button></li>
-                    <li role="button"><button class="answer">3. booleans</button></li>
-                    <li role="button"><button class="answer">4. all of the above</button></li>
-                </ul>
-            </div>
-            <div class="quiz-question">
-                <h3 class="question">String values must be enclosed within ____ when being assigned to variables.</p>
-                <ul class="answers">
-                    <li role="button"><button class="answer">1. commas</button></li>
-                    <li role="button"><button class="answer">2. curly brackets</button></li>
-                    <li role="button"><button class="answer">3. quotes</button></li>
-                    <li role="button"><button class="answer">4. parentheses</button></li>
-                </ul>
-            </div>
-            <div class="quiz-question">
-                <h3 class="question">A very useful tool used during development and debugging for printing content to the debugger is:</p>
-                <ul class="answers">
-                    <li role="button"><button class="answer">1. JavaScript</button></li>
-                    <li role="button"><button class="answer">2. terminal/bash</button></li>
-                    <li role="button"><button class="answer">3. for loops</button></li>
-                    <li role="button"><button class="answer">4. console.log</button></li>
-                </ul>
-            </div>
+        <!-- Quiz question -->
+        <div id="quiz-question">
+            <h3 id="question"></h3>
+            <ul id="answers" class="list"></ul>
+            <div id="question-results" class="center hide"></div>
         </div>
 
+        <!-- Quiz results -->
+        <div id="quiz-results" class="center hide">
+            <h3 id="result-message">All done!</h3>
+            <p>Your final score is <br /><span id="score"></span></p>
+            <form id="save-score">
+                <label for="initials">Save your score:</label><br />
+                <input type="text" id="initials" name="initials" placeholder="Your initials">
+                <button id="save">Submit Score</button>
+            </form>
+        </div>
     </div>
     <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <script src="https://cdn.jsdelivr.net/npm/postcss@8.4.21/lib/postcss.min.js"></script>
-   <script src="./assets/script.js"></script>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+    <script src="./assets/script.js" async defer></script>
 </body>
+
 </html>
