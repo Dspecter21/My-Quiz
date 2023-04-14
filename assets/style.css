@@ -1,34 +1,100 @@
+@use postcss-preset-env;
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #333;
+	background: #fff;
+}
+
+nav {
+	background: #333;
+	
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav a {
+	display: block;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+nav li a:hover {
+	background: #444;
+}
+
+button {
+	--light: 42%;
+	background-color: hsl(261, 75%, var(--light));
+	cursor: pointer;
+	border: 0;
+	padding: .5rem 1rem;
+	margin-top: 1rem;
+	color: #fff;
+	font-size: 16px;
+	border-radius: .3rem;
+
+	& :hover {
+		--light: 52%;
+	}
+
+	& :active {
+		--light: 62%;
+	}
+
+	& :disabled {
+		--light: 32%;
+	}
+}
 
 
-/* Style the quiz form */
-#quiz-form {
-    font-family: sans-serif;
-    margin: 20px;
-  }
-  
-  /* Style the quiz questions */
-  h3 {
-    margin: 20px 0 10px;
-  }
-  
-  /* Style the quiz answer labels */
-  label {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  /* Style the quiz submit button */
-  button[type="submit"] {
-    background-color: #0077cc;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #005fa3;
-  }
-  
+.quiz-box {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2rem;
+	background: #fff;
+	border: 1px solid #ddd;
+	text-align: left;
+}
+
+.question {
+	margin: 2rem auto;
+	padding: 0;
+	font-size: 1rem;
+}
+
+.answers {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.quiz-start {
+	text-align: center;
+
+}
+
+.quiz-start h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 2rem;
+}
+
+.quiz-start p {
+	margin: 0;
+	padding: 0;
+}

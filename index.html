@@ -2,88 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>My Quiz</title>
+    <title>Coding Quiz Challenge</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href= "assets/style.css"
 </head>
-
 <body>
-    <form id="quiz-form">
-        <h2>Programming Quiz</h2>
+    <nav>
+        <ul>
+            <li class="highscores"><a href="/highscores.html">High Scores</a></li>
+            <li class="timer">Time: <span id="time"></span></li>
+        </ul>
+    </nav>
+    <div class="quiz-box">
+        <!-- Start screen -->
+        <div class="quiz-start">
+            <h3>Coding Quiz Challenge</h3>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <button class="start">Start Quiz</button>
+        </div>
 
-        <h3>Question 1:</h3>
-        <p>
-            Is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and
-            CSS.
-        </p>
+        <!-- Quiz screen -->
+        <div class="quiz">
+            <div class="quiz-question">
+                <h3 class="question">Commonly used data types DO NOT include:</p>
+                <ul class="answers">
+                    <li role="button"><button class="answer">1. strings</button></li>
+                    <li role="button"><button class="answer">2. booleans</button></li>
+                    <li role="button"><button class="answer">3. alerts</button></li>
+                    <li role="button"><button class="answer">4. numbers</button></li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <h3 class="question">The condition in an if/else statement is enclosed within ____.</p>
+                <ul class="answers">
+                    <li role="button"><button class="answer">1. quotes</button></li>
+                    <li role="button"><button class="answer">2. curly brackets</button></li>
+                    <li role="button"><button class="answer">3. parentheses</button></li>
+                    <li role="button"><button class="answer">4. square brackets</button></li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <h3 class="question">Arrays in JavaScript can be used to store ____.</p>
+                <ul class="answers">
+                    <li role="button"><button class="answer">1. numbers and strings</button></li>
+                    <li role="button"><button class="answer">2. other arrays</button></li>
+                    <li role="button"><button class="answer">3. booleans</button></li>
+                    <li role="button"><button class="answer">4. all of the above</button></li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <h3 class="question">String values must be enclosed within ____ when being assigned to variables.</p>
+                <ul class="answers">
+                    <li role="button"><button class="answer">1. commas</button></li>
+                    <li role="button"><button class="answer">2. curly brackets</button></li>
+                    <li role="button"><button class="answer">3. quotes</button></li>
+                    <li role="button"><button class="answer">4. parentheses</button></li>
+                </ul>
+            </div>
+            <div class="quiz-question">
+                <h3 class="question">A very useful tool used during development and debugging for printing content to the debugger is:</p>
+                <ul class="answers">
+                    <li role="button"><button class="answer">1. JavaScript</button></li>
+                    <li role="button"><button class="answer">2. terminal/bash</button></li>
+                    <li role="button"><button class="answer">3. for loops</button></li>
+                    <li role="button"><button class="answer">4. console.log</button></li>
+                </ul>
+            </div>
+        </div>
 
-        <label>
-            <input type="checkbox" name="q1" value="a"> CSS
-        </label>
-        <label>
-            <input type="checkbox" name="q1" value="b"> HTML
-        </label>
-        <label>
-            <input type="checkbox" name="q1" value="c"> JavaScript
-        </label>
-
-        <h3>Question 2:</h3>
-
-        <p>
-            Is a style sheet language used for describing the presentation of a document written in a markup language
-            such as HTML or XML
-
-        </p>
-        <label>
-            <input type="checkbox" name="q2" value="a"> HTML
-        </label>
-        <label>
-            <input type="checkbox" name="q2" value="b"> Web API
-        </label>
-        <label>
-            <input type="checkbox" name="q2" value="c"> CSS
-        </label>
-
-        <h3>Question 3:</h3>
-        <p>
-            Is a cross-platform and language-independent interface that treats an XML or HTML document as a tree
-            structure wherein each node is an object representing a part of the document.
-
-        </p>
-        <label>
-            <input type="checkbox" name="q2" value="a"> Node.js
-        </label>
-        <label>
-            <input type="checkbox" name="q2" value="b"> DOM
-        </label>
-        <label>
-            <input type="checkbox" name="q2" value="c"> JavaScript
-        </label>
-
-        <h3>Question 4:</h3>
-        <p>
-            Is an Internet hosting service for software development and version control using Git. It provides the
-            distributed version control of Git plus access control, bug tracking, software feature requests, task
-            management, continuous integration, and wikis for every project.
-
-        </p>
-        <label>
-            <input type="checkbox" name="q2" value="a"> Google Chrome
-        </label>
-        <label>
-            <input type="checkbox" name="q2" value="b"> GitHub
-        </label>
-        <label>
-            <input type="checkbox" name="q2" value="c"> Visual Studio Code
-        </label>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <p id="score"></p>
-
+    </div>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <script src="https://cdn.jsdelivr.net/npm/postcss@8.4.21/lib/postcss.min.js"></script>
+    <script src="./assets/script.js" async defer></script>
 </body>
-
 </html>
